@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Nike Mercurial Superfly 9 Academy By You",
+    "brand": "Nike",
+    "price": 2890000,
+    "originalPrice": 3250000,
+    "rating": 4.5,
+    "image": "/assets/images/shoes/custom-mercurial-superfly-9-academy-shoes-by-you.jpg",
+    "category": "Turf",
+    "description": "Giày bóng đá với thiết kế tuỳ chỉnh, phù hợp cho sân cỏ nhân tạo.",
+    "isHotDeal": true
+  },
+  {
+    "id": 2,
+    "name": "Nike Mercurial Vapor 15 Academy TF",
+    "brand": "Nike",
+    "price": 2550000,
+    "originalPrice": 2990000,
+    "rating": 5,
+    "image": "/assets/images/shoes/mercurial-vapor-15-academy-tf-low-top-football-shoes.jpg",
+    "category": "Turf",
+    "description": "Giày nhẹ và linh hoạt giúp tăng tốc độ tối đa trên sân cỏ nhân tạo.",
+    "isHotDeal": false
+  },
+  {
+    "id": 3,
+    "name": "Nike Phantom GX 2 Club TF",
+    "brand": "Nike",
+    "price": 2750000,
+    "originalPrice": null,
+    "rating": 4,
+    "image": "/assets/images/shoes/phantom-gx-2-club-tf-low-top-football-shoes-Fh3LdF-819x1024.jpg",
+    "category": "Turf",
+    "description": "Cảm giác bóng chính xác và độ bám tốt cho cầu thủ kiểm soát trận đấu.",
+    "isHotDeal": false
+  },
+  {
+    "id": 4,
+    "name": "Nike Phantom GX 2 Elite FG",
+    "brand": "Nike",
+    "price": 4890000,
+    "originalPrice": 5500000,
+    "rating": 4.8,
+    "image": "/assets/images/shoes/phantom-gx-2-elite-fg-low-top-football-boot-8JGqj6-819x1024.jpg",
+    "category": "Firm Ground",
+    "description": "Thiết kế đột phá mang lại khả năng kiểm soát bóng và độ ổn định tối đa.",
+    "isHotDeal": true
+  },
+  {
+    "id": 5,
+    "name": "Nike Phantom Luna Elite FG",
+    "brand": "Nike",
+    "price": 5190000,
+    "originalPrice": 5800000,
+    "rating": 5,
+    "image": "/assets/images/shoes/phantom-luna-elite-high-top-football-boot-D5KlmN-819x1024.jpg",
+    "category": "Firm Ground",
+    "description": "Dành cho cầu thủ chuyên nghiệp với thiết kế tối ưu về kiểm soát và độ bám sân.",
+    "isHotDeal": false
+  },
+  {
+    "id": 6,
+    "name": "Nike React Gato Indoor Court TF",
+    "brand": "Nike",
+    "price": 2390000,
+    "originalPrice": 2700000,
+    "rating": 4.3,
+    "image": "/assets/images/shoes/react-gato-indoor-court-low-top-football-shoes-pQBhgB-819x1024.jpg",
+    "category": "Indoor",
+    "description": "Giày futsal cao cấp, hỗ trợ phản xạ nhanh và kiểm soát bóng trong không gian hẹp.",
+    "isHotDeal": true
+  },
+  {
+    "id": 7,
+    "name": "Nike Streetgato Low Top",
+    "brand": "Nike",
+    "price": 2190000,
+    "originalPrice": 2600000,
+    "rating": 4,
+    "image": "/assets/images/shoes/streetgato-low-top-football-shoes-vPc9s8-819x1024.jpg",
+    "category": "Street",
+    "description": "Phong cách đường phố năng động, phù hợp chơi bóng và thời trang hàng ngày.",
+    "isHotDeal": false
+  },
+  {
+    "id": 8,
+    "name": "Nike Tiempo Legend 10 Academy FG",
+    "brand": "Nike",
+    "price": 3590000,
+    "originalPrice": 4100000,
+    "rating": 4.7,
+    "image": "/assets/images/shoes/tiempo-legend-10-academy-low-top-football-shoes-2gKwhN-819x1024.jpg",
+    "category": "Firm Ground",
+    "description": "Da mềm mại và cảm giác chạm bóng tự nhiên, phù hợp cho cầu thủ kỹ thuật.",
+    "isHotDeal": false
+  },
+  {
+    "id": 9,
+    "name": "Nike Tiempo Legend 10 Club MG",
+    "brand": "Nike",
+    "price": 2990000,
+    "originalPrice": 3400000,
+    "rating": 4.5,
+    "image": "/assets/images/shoes/tiempo-legend-10-club-multi-ground-low-top-football-boot-PNdvpg-819x1024.jpg",
+    "category": "Multi Ground",
+    "description": "Phù hợp với nhiều loại mặt sân, mang lại độ ổn định và thoải mái vượt trội.",
+    "isHotDeal": true
+  },
+  {
+    "id": 10,
+    "name": "Nike Tiempo Legend 10 Elite FG",
+    "brand": "Nike",
+    "price": 5290000,
+    "originalPrice": 5800000,
+    "rating": 5,
+    "image": "/assets/images/shoes/tiempo-legend-10-elite-fg-low-top-football-boot-F47h5D-819x1024.jpg",
+    "category": "Firm Ground",
+    "description": "Giày da cao cấp mang lại cảm giác thoải mái và kiểm soát bóng hoàn hảo.",
+    "isHotDeal": false
+  }
+]
