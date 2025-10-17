@@ -90,13 +90,15 @@ function ProductList() {
             Những đôi giày được săn đón nhất, giúp bạn tỏa sáng trên sân cỏ.
           </p>
         </div>
-        <Slider {...settings}>
-          {products.map((p) => (
-            <div key={p.id} className="px-4">
-              <ProductCard product={p} />
-            </div>
-          ))}
-        </Slider>
+        <div className="overflow-hidden">
+          <Slider {...settings}>
+            {products.map((p) => (
+              <div key={p.id} className="px-4 py-4">
+                <ProductCard product={p} />
+              </div>
+            ))}
+          </Slider>
+        </div>
       </div>
     </section>
   );

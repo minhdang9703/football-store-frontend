@@ -1,6 +1,11 @@
 import { ShoppingCartIcon, UserIcon, MagnifyingGlassIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
+import { Link } from 'react-router-dom';
+import { useCart } from '../../context/CartContext';
 
 function Header() {
+  const { cartItems } = useCart();
+  const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+
   const menuItems = ['Trang chủ', 'Sản phẩm', 'Ưu đãi', 'Tin tức', 'Liên hệ'];
   const shoeTypes = ['Sân cỏ tự nhiên (FG)', 'Sân cỏ nhân tạo (AG/TF)', 'Sân Futsal (IC)'];
   const brands = ['Nike', 'Adidas', 'Puma', 'Mizuno'];
@@ -47,10 +52,14 @@ function Header() {
             <a href="#" className="p-2 rounded-full hover:bg-gray-800 transition">
               <UserIcon className="h-6 w-6" />
             </a>
-            <a href="#" className="relative p-2 rounded-full hover:bg-gray-800 transition">
+            <Link to="/cart" className="relative p-2 rounded-full hover:bg-gray-800 transition">
               <ShoppingCartIcon className="h-6 w-6" />
-              <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-black text-xs font-bold">3</span>
-            </a>
+              {totalItems > 0 && (
+                <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-black text-xs font-bold">
+                  {totalItems}
+                </span>
+              )}
+            </Link>
           </div>
         </div>
         <nav className="hidden md:flex items-center justify-center space-x-8 h-12 border-t border-gray-700">
