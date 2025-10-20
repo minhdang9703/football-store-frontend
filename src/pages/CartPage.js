@@ -9,8 +9,7 @@ function CartPage() {
   const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   return (
-    <div className="flex flex-col min-h-screen">
-      <Header />
+    <div className="flex flex-col min-h-screen">      
       <main className="flex-grow bg-base-light py-12">
         <div className="max-w-4xl mx-auto px-4">
           <h1 className="text-3xl font-bold text-secondary font-poppins mb-8">Giỏ Hàng Của Bạn</h1>
@@ -26,8 +25,8 @@ function CartPage() {
               <div className="lg:col-span-2 bg-white p-4">
                 {cartItems.map(item => (
                   <div key={item.cartItemId} className="flex items-center gap-4 border-b py-4">
-                    {/* <img src={item.image} alt={item.name} className="w-24 h-24 object-contain" /> */}
-                    {item.color && item.color.name ? (  
+                    <img src={item.image} className="w-24 h-24 object-contain" />
+                    {/* {item.color && item.color.name ? (  
                       <p className="text-sm text-text-muted">
                         Màu: {item.color?.name || 'Không rõ'}, Size: {item.size || 'Không rõ'}
                       </p>
@@ -35,7 +34,7 @@ function CartPage() {
                       <p className="text-sm text-text-muted">
                         Size: {item.size || 'Không có'}
                       </p>
-                    )}
+                    )} */}
                     <div className="flex-1">
                       <h3 className="font-semibold text-secondary">{item.name}</h3>
                       <p className="text-sm text-text-muted">Màu: {item.color?.name || 'Không rõ'}, Size: {item.size || 'Không rõ'}</p>
@@ -56,13 +55,17 @@ function CartPage() {
                   <span>Tạm tính:</span>
                   <span className="font-bold">{total.toLocaleString()}₫</span>
                 </div>
-                <button className="w-full bg-cta-hover text-white font-bold py-3 uppercase">Tiến hành thanh toán</button>
+                {/* Proceed to checkout page */}
+                <Link to="/checkout" className="block">
+                  <button className="w-full bg-cta-hover text-white font-bold py-3 uppercase">
+                    Tiến hành thanh toán
+                  </button>
+                </Link>
               </div>
             </div>
           )}
         </div>
-      </main>
-      <Footer />
+      </main>      
     </div>
   );
 }

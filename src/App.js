@@ -7,31 +7,42 @@ import CartPage from './pages/CartPage';
 import Layout from './components/Layout/Layout';
 import { BrowserRouter } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
-import CartNotification from './components/UI/CartNotification';import MainLayout from './components/Layout/Layout';
+// import ProductListPage from './pages/ProductListPage';
+import CartNotification from './components/UI/CartNotification';
+import MainLayout from './components/Layout/Layout';
+import CheckoutPage from './pages/CheckoutPage';
+import ProductCategoryPage from './pages/ProductCategoryPage';
+import OrderConfirmationPage from './pages/OrderConfirmationPage';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+import AccountPage from './pages/AccountPage';
+import { AuthProvider } from './context/AuthContext';
+
 function App() {
-//   return (
-//     <CartProvider>
-//       <Router>     
-//         <CartNotification />
-//         <Routes>
-//           <Route path="/" element={<HomePage />} />
-//           <Route path="/products/:id" element={<ProductDetailPage />} />
-//           <Route path="/cart" element={<CartPage />} />
-//         </Routes>
-//       </Router>
-//     </CartProvider>
-//   );
-// }
- return (
-    <BrowserRouter>
-      <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/products/:id" element={<ProductDetailPage />} />
-          <Route path="/cart" element={<CartPage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+  return (
+    <AuthProvider>
+      <CartProvider>
+        <BrowserRouter>
+          <CartNotification />
+          <Routes>
+            <Route element={<MainLayout />}>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/products/:id" element={<ProductDetailPage />} />
+              <Route path="/cart" element={<CartPage />} />
+              {/* <Route path="/productlist" element={<ProductListPage />} /> */}
+              <Route path="/checkout" element={<CheckoutPage />} />
+              <Route path="/order-confirmation/:orderId" element={<OrderConfirmationPage />} />
+              {/* Category listing (header dropdown uses /category?type=...) */}
+              <Route path="/category" element={<ProductCategoryPage />} />
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/register" element={<RegisterPage />} />
+              <Route path="/account" element={<AccountPage />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </CartProvider>
+    </AuthProvider>
   );
 }
+
 export default App;

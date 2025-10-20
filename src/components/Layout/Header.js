@@ -20,9 +20,14 @@ function Header() {
       <div className="absolute left-0 mt-2 w-56 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-10">
         <div className="py-1">
           {items.map(item => (
-            <a key={item} href="#" className="block px-4 py-2 text-sm text-secondary hover:bg-gray-100 hover:text-primary">
+            // link to category page using query param type
+            <Link
+              key={item}
+              to={`/category?type=${encodeURIComponent(item)}`}
+              className="block px-4 py-2 text-sm text-secondary hover:bg-gray-100 hover:text-primary"
+            >
               {item}
-            </a>
+            </Link>
           ))}
         </div>
       </div>
@@ -49,7 +54,7 @@ function Header() {
             </div>
           </div>
           <div className="flex items-center space-x-4">
-            <a href="#" className="p-2 rounded-full hover:bg-gray-800 transition">
+            <a href="/account" className="p-2 rounded-full hover:bg-gray-800 transition">
               <UserIcon className="h-6 w-6" />
             </a>
             <Link to="/cart" className="relative p-2 rounded-full hover:bg-gray-800 transition">

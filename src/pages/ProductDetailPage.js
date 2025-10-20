@@ -4,32 +4,48 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import ProductSidebar from '../components/Product/ProductSidebar';
 import { ChevronRightIcon } from '@heroicons/react/20/solid';
+import BackToTopButton from '../components/UI/BackToTopButton';
+import { getProductById } from "../api/products";
 
 function ProductDetailPage() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [mainImage, setMainImage] = useState('');
   const [selectedImage, setSelectedImage] = useState(''); // Ảnh được chọn bởi người dùng (khi click)
+  // selection state for passing to cart
+  const [selectedSize, setSelectedSize] = useState("");
+  const [selectedColor, setSelectedColor] = useState(null);
+
   const { addToCart } = useCart();
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('/data.json')
-      .then(res => res.json())
-      .then(data => {
-        const foundProduct = data.find(p => p.id.toString() === id);
-        setProduct(foundProduct);
-        if (foundProduct) {
-          setMainImage(foundProduct.image);
-          setSelectedImage(foundProduct.image); // Đặt ảnh gốc làm ảnh được chọn ban đầu
+    let mounted = true;
+    getProductById(id).then((foundProduct) => {
+      if (!mounted) return;
+      setProduct(foundProduct);
+      if (foundProduct) {
+        setMainImage(foundProduct.image);
+        setSelectedImage(foundProduct.image); // Đặt ảnh gốc làm ảnh được chọn ban đầu
+        // initialize default size/color if available
+        if (foundProduct.sizes && foundProduct.sizes.length) {
+          setSelectedSize(foundProduct.sizes[0]);
         }
-      });
+        if (foundProduct.colors && foundProduct.colors.length) {
+          setSelectedColor(foundProduct.colors[0]);
+        }
+      }
+    }).catch(() => { /* ignore */ });
+    return () => { mounted = false; };
   }, [id]);
 
   const handleAddToCart = (buyNow = false) => {
     const itemToAdd = {
       ...product,
-      quantity: 1, 
+      quantity: 1,
+      // include selected options so cart can show them
+      size: selectedSize || product.size || null,
+      color: selectedColor || product.color || null
     };
     addToCart(itemToAdd);
     if (buyNow) {
@@ -96,6 +112,51 @@ function ProductDetailPage() {
                       )}
                     </div>
 
+                    {/* Size selector (if sizes available) */}
+                    {product.sizes && product.sizes.length > 0 && (
+                      <div className="mb-4">
+                        <div className="text-sm text-text-muted mb-2">Chọn kích cỡ</div>
+                        <div className="flex gap-2 flex-wrap">
+                          {product.sizes.map((s) => (
+                            <button
+                              key={s}
+                              type="button"
+                              onClick={() => setSelectedSize(s)}
+                              className={`px-3 py-1 border rounded ${selectedSize === s ? 'bg-primary text-white' : 'bg-white'}`}
+                            >
+                              {s}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Color selector (if colors available) */}
+                    {product.colors && product.colors.length > 0 && (
+                      <div className="mb-4">
+                        <div className="text-sm text-text-muted mb-2">Chọn màu</div>
+                        <div className="flex gap-2 items-center">
+                          {product.colors.map((c, idx) => {
+                            // support string color or object { name, hex, image }
+                            const colorName = typeof c === 'string' ? c : c.name;
+                            const swatchStyle = typeof c === 'object' && c.hex ? { backgroundColor: c.hex } : {};
+                            return (
+                              <button
+                                key={idx}
+                                type="button"
+                                onClick={() => setSelectedColor(c)}
+                                className={`w-8 h-8 rounded-full border ${selectedColor === c ? 'ring-2 ring-primary' : ''} flex items-center justify-center`}
+                                title={colorName}
+                                style={swatchStyle}
+                              >
+                                {(!swatchStyle.backgroundColor) ? <span className="text-xs">{colorName}</span> : null}
+                              </button>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
+
                     <div className="flex gap-4 mb-6">
                       <button onClick={() => handleAddToCart(true)} className="flex-1 bg-accent text-white font-bold py-3 uppercase">Mua ngay</button>
                       <button onClick={() => handleAddToCart(false)} className="flex-1 border border-accent text-accent font-bold py-3 uppercase hover:bg-accent hover:text-white transition">Thêm vào giỏ hàng</button>
@@ -133,6 +194,7 @@ function ProductDetailPage() {
           </div>
         </div>
       </main>
+      <BackToTopButton />
       
     </>
   );

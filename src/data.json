@@ -1,0 +1,123 @@
+[
+  {
+    "id": 1,
+    "name": "KICKZONE Phantom FG",
+    "brand": "Nike",
+    "sku": "NK-PH-001",
+    "price": 2490000,
+    "originalPrice": 2990000,
+    "sizes": ["38","39","40","41","42"],
+    "colors": [{"name":"Đỏ","hex":"#DC2626"}, {"name":"Đen","hex":"#111827"}],
+    "image": "https://via.placeholder.com/400x400?text=Phantom+FG",
+    "gallery": [
+      "https://via.placeholder.com/400x400?text=Phantom+1",
+      "https://via.placeholder.com/400x400?text=Phantom+2",
+      "https://via.placeholder.com/400x400?text=Phantom+3"
+    ],
+    "specs": {"Upper":"Sợi tổng hợp","Sole":"FG stud","Weight":"210g"},
+    "category":"Giày","type":"Sân cỏ tự nhiên (FG)"
+  },
+  {
+    "id": 2,
+    "name": "Adizero Speed AG",
+    "brand": "Adidas",
+    "sku": "AD-SP-002",
+    "price": 1990000,
+    "originalPrice": null,
+    "sizes": ["39","40","41","42","43"],
+    "colors": ["Trắng","Xanh"],
+    "image": "https://via.placeholder.com/400x400?text=Adizero+AG",
+    "gallery": [
+      "https://via.placeholder.com/400x400?text=Adizero+1",
+      "https://via.placeholder.com/400x400?text=Adizero+2"
+    ],
+    "specs": {"Upper":"Mesh","Sole":"AG TPU","Weight":"200g"},
+    "category":"Giày","type":"Sân cỏ nhân tạo (AG/TF)"
+  },
+  {
+    "id": 3,
+    "name": "Puma One IC",
+    "brand": "Puma",
+    "sku": "PM-IC-003",
+    "price": 990000,
+    "originalPrice": 1290000,
+    "sizes": ["37","38","39","40"],
+    "colors": ["Đen","Vàng"],
+    "image": "https://via.placeholder.com/400x400?text=Puma+IC",
+    "gallery": [
+      "https://via.placeholder.com/400x400?text=Puma+1"
+    ],
+    "specs": {"Upper":"Synthetic","Sole":"Rubber IC","Weight":"180g"},
+    "category":"Giày","type":"Sân Futsal (IC)"
+  },
+  {
+    "id": 4,
+    "name": "Mizuno Morelia Pro",
+    "brand": "Mizuno",
+    "sku": "MZ-MP-004",
+    "price": 3500000,
+    "originalPrice": 3990000,
+    "sizes": ["40","41","42","43"],
+    "colors": ["Đen"],
+    "image": "https://via.placeholder.com/400x400?text=Morelia+Pro",
+    "gallery": [],
+    "specs": {"Upper":"Leather","Sole":"FG stud","Weight":"220g"},
+    "category":"Giày","type":"Sân cỏ tự nhiên (FG)"
+  },
+  {
+    "id": 5,
+    "name": "Bóng đá Kick Pro",
+    "brand": "KICKZONE",
+    "sku": "KZ-BALL-005",
+    "price": 250000,
+    "originalPrice": null,
+    "sizes": [],
+    "colors": ["Trắng"],
+    "image": "https://via.placeholder.com/400x400?text=Ball+Pro",
+    "gallery": [],
+    "specs": {"Size":"5","Material":"PU"},
+    "category":"Phụ kiện","type":"Bóng đá"
+  },
+  {
+    "id": 6,
+    "name": "Vớ thể thao Comfort",
+    "brand": "KICKZONE",
+    "sku": "KZ-SOCK-006",
+    "price": 59000,
+    "originalPrice": null,
+    "sizes": ["S","M","L"],
+    "colors": ["Đen","Trắng"],
+    "image": "https://via.placeholder.com/400x400?text=Socks",
+    "gallery": [],
+    "specs": {"Material":"Cotton"},
+    "category":"Phụ kiện","type":"Vớ"
+  },
+  {
+    "id": 7,
+    "name": "Túi thể thao TravelBag",
+    "brand": "KICKZONE",
+    "sku": "KZ-BAG-007",
+    "price": 399000,
+    "originalPrice": null,
+    "sizes": [],
+    "colors": ["Đen"],
+    "image": "https://via.placeholder.com/400x400?text=Bag",
+    "gallery": [],
+    "specs": {"Capacity":"30L"},
+    "category":"Phụ kiện","type":"Túi & Balo"
+  },
+  {
+    "id": 8,
+    "name": "Giày tập Futsal Flex",
+    "brand": "Puma",
+    "sku": "PM-FX-008",
+    "price": 1290000,
+    "originalPrice": 1490000,
+    "sizes": ["39","40","41","42"],
+    "colors": ["Xanh","Đen"],
+    "image": "https://via.placeholder.com/400x400?text=Futsal+Flex",
+    "gallery": [],
+    "specs": {"Upper":"Synthetic","Sole":"IC Rubber"},
+    "category":"Giày","type":"Sân Futsal (IC)"
+  }
+]
