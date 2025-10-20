@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import Header from '../components/Layout/Header';
-import Footer from '../components/Layout/Footer';
+
 import { useCart } from '../context/CartContext';
 import ProductSidebar from '../components/Product/ProductSidebar';
 import { ChevronRightIcon } from '@heroicons/react/20/solid';
@@ -46,7 +45,7 @@ function ProductDetailPage() {
 
   return (
     <>
-      <Header />
+     
       <main className="bg-base-light py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumbs */}
@@ -134,7 +133,7 @@ function ProductDetailPage() {
           </div>
         </div>
       </main>
-      <Footer />
+      
     </>
   );
 }

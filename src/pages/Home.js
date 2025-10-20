@@ -13,7 +13,7 @@ import BackToTopButton from "../components/UI/BackToTopButton";
 function HomePage() {
   return (
     <>
-      <Header />
+     
       <main className="bg-base-light">
         <HeroBanner />
         <ProductList />
@@ -23,7 +23,7 @@ function HomePage() {
         <Testimonials />
         <BlogSection />
       </main>
-      <Footer />
+     
       <BackToTopButton />
     </>
   );
